@@ -14,7 +14,11 @@ namespace MemoWebApp.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            // memoのリストを取得
+            var di = new DirectoryInfo(".");
+            var files = di.GetFiles("*.memo");
+
+            return View(files);
         }
 
         public IActionResult New()
