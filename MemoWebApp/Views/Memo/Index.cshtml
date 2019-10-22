@@ -10,6 +10,6 @@
 <div class="list-group">
     @foreach (var file in Model)
     {
-        <a href="#" class="list-group-item list-group-item-action">@file.Name</a>
+        <a asp-controller="Memo" asp-action="Show" asp-route-filename="@file.Name" class="list-group-item list-group-item-action">@file.Name</a>
     }
 </div>
