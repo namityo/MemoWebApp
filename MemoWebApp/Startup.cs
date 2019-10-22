@@ -44,14 +44,14 @@ namespace MemoWebApp
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute(
+                //    name: "default",
+                //    pattern: "{controller=Home}/{action=Index}/{id?}");
 
                 // MemoMap
                 endpoints.MapControllerRoute(
-                    name: "memo",
-                    pattern: "{controller=Memo}/{action=Index}/{id?}");
+                    name: "default",
+                    pattern: "{controller=Memo}/{action=Index}/");
             });
         }
     }
