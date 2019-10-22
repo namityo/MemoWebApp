@@ -47,6 +47,11 @@ namespace MemoWebApp
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                // MemoMap
+                endpoints.MapControllerRoute(
+                    name: "memo",
+                    pattern: "{controller=Memo}/{action=Index}/{id?}");
             });
         }
     }
