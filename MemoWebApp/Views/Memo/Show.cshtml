@@ -1,0 +1,11 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MemoWebApp.Models.Memo.ShowModel
+@{
+    ViewData["Title"] = $"Memo - {Model.title}";
+}
+
+<h1>@Model.title</h1>
+
+<p>@Model.text</p>

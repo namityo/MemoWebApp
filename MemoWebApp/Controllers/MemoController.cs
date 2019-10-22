@@ -21,6 +21,19 @@ namespace MemoWebApp.Controllers
             return View(files);
         }
 
+        public IActionResult Show(string filename)
+        {
+            var model = new Models.Memo.ShowModel() { title = filename };
+
+            // memoの詳細を取得
+            using (var sr = new StreamReader($"{filename}"))
+            {
+                model.text = sr.ReadToEnd();
+            }
+
+            return View(model);
+        }
+
         public IActionResult New()
         {
             return View();
