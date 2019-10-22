@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -18,6 +19,17 @@ namespace MemoWebApp.Controllers
 
         public IActionResult New()
         {
+            return View();
+        }
+
+        public IActionResult Create(string title, string text)
+        {
+            // ファイルを作成する
+            using (var sw = new StreamWriter($"{title}.memo"))
+            {
+                sw.Write(text);
+            }
+
             return View();
         }
     }
